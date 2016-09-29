@@ -49,7 +49,7 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>--%>
-        <%--SqlCommand in ADO.NET Part 4--%>
+<%--SqlCommand in ADO.NET Part 4
 
 
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -65,6 +65,8 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
+        --%>
+
 
 
     </div>
