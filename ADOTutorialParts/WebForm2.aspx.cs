@@ -226,7 +226,38 @@ namespace ADOTutorialParts
             }
         }
         */
+        /* Calling a Stored Procedure with Output Parameters Part 7
+         * 
+         * 
+         * 
+         *
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("spAddEmployee", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Name", empText.Text);
+                cmd.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
+                cmd.Parameters.AddWithValue("@Salary", salBox.Text);
+
+                SqlParameter outPara = new SqlParameter("@EmployeeId", System.Data.SqlDbType.Int);
+                outPara.Direction = System.Data.ParameterDirection.Output;
+
+                cmd.Parameters.Add(outPara);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                lblMessage.Text = "Employee Id = " + outPara.Value.ToString();
+            }
+        }
+        */
 
         protected void Page_Load(object sender, EventArgs e)
         {
