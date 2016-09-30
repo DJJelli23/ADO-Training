@@ -187,7 +187,7 @@ namespace ADOTutorialParts
          * 
          * 
          * 
-         */
+         *
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -199,12 +199,38 @@ namespace ADOTutorialParts
             using (SqlConnection con = new SqlConnection(cs))
             {
                 // Never dynamicly build sql queries as a hacker can inject any sql statement into the textbox.
-                string command = "select * from tblProductInventory where ProductName like '" + TextBox1.Text + "%'";
+                //
+                // Using a parameter.
+                /* 
+                 * 
+                 * 
+                string command = "select * from tblProductInventory where ProductName like @ProductName";
                 SqlCommand cmd = new SqlCommand(command, con);
+                cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text + "%");
+                con.Open();
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
+                *
+                // Using a Stored Proc
+                *
+                 * 
+                 * 
+                 *
+                string command = "spGetProductsByName";
+                SqlCommand cmd = new SqlCommand(command, con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text);
                 con.Open();
                 GridView1.DataSource = cmd.ExecuteReader();
                 GridView1.DataBind();
             }
+        }
+        */
+
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
