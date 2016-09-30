@@ -183,6 +183,50 @@ namespace ADOTutorialParts
             }
         }
         */
+        /* SQL Injection Prevention - Part 6
+         * 
+         * 
+         * 
+         *
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                // Never dynamicly build sql queries as a hacker can inject any sql statement into the textbox.
+                //
+                // Using a parameter.
+                /* 
+                 * 
+                 * 
+                string command = "select * from tblProductInventory where ProductName like @ProductName";
+                SqlCommand cmd = new SqlCommand(command, con);
+                cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text + "%");
+                con.Open();
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
+                *
+                // Using a Stored Proc
+                *
+                 * 
+                 * 
+                 *
+                string command = "spGetProductsByName";
+                SqlCommand cmd = new SqlCommand(command, con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text);
+                con.Open();
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
+            }
+        }
+        */
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
