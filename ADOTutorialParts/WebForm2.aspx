@@ -100,6 +100,50 @@
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
         --%>
+<%--Calling a Stored Procedure with Output Parameters Part 7--%
+
+        <asp:Table ID="Table1" runat="server">
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">
+                    <asp:Label runat="server" ID="empLabel">Employee Name</asp:Label>
+                </asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:TextBox runat="server" ID="empText"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">
+                    <asp:Label runat="server">Gender</asp:Label>
+                </asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:DropDownList runat="server" ID="ddlGender">
+                        <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                        <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                    </asp:DropDownList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">
+                    <asp:Label ID="salLabel" runat="server" Text="Salary"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:TextBox ID="salBox" runat="server"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server" HorizontalAlign="NotSet">
+                <asp:TableCell runat="server">
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">
+                    <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        --%>
+
+
     </div>
     </form>
 </body>
