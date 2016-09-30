@@ -83,8 +83,7 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>--%>
-        <%--SQL Injection Prevention - Part 6--%>
-
+<%--SQL Injection Prevention - Part 6--%>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Get Products" />
         <br />
