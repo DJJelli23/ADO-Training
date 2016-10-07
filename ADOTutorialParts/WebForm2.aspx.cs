@@ -258,12 +258,13 @@ namespace ADOTutorialParts
             }
         }
         */
-        /* 
+        /* SqlDataReader in ADO.NET Tutorial - Part 8
          * 
          * 
          * 
          * 
          */
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
