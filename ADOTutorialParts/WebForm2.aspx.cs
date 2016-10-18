@@ -389,5 +389,34 @@ namespace ADOTutorialParts
             }
         }
         */
+        /* DataSet in asp.net - Part 11.
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("spGetDate", con);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                DataSet dt = new DataSet();
+                sda.Fill(dt);
+
+                dt.Tables[0].TableName = "Products";
+                dt.Tables[1].TableName = "Categories";
+
+                GridView1.DataSource = dt.Tables["Products"];
+                GridView1.DataBind();
+
+                GridView2.DataSource = dt.Tables["Categories"];
+                GridView2.DataBind();
+            }
+        }        
     }
 }
