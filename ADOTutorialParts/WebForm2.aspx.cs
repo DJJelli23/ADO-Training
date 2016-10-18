@@ -346,16 +346,48 @@ namespace ADOTutorialParts
             }
         }
         */
-
         /* SqlDataAdapter in ADO.NET - Part 10
          * 
          * 
          * 
-         */
+         *
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            //using (SqlConnection con = new SqlConnection(cs))
+            //{
+            //    //SqlDataAdapter da = new SqlDataAdapter("Select * from tblProductInventory", con);
+            //    SqlDataAdapter da = new SqlDataAdapter("spGetProductInventory", con);
+            //    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            //    DataSet ds = new DataSet();// in memory rep of my tables.
 
+            //    da.Fill(ds);
+
+            //    GridView1.DataSource = ds;
+            //    GridView1.DataBind();
+            //}
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //Stored proc with parameters.
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                //SqlDataAdapter da = new SqlDataAdapter("Select * from tblProductInventory", con);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand("spGetProductInventoryById", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@ProductId", TextBox1.Text);
+
+                DataSet ds = new DataSet();// in memory rep of my tables.
+                da.Fill(ds);
+
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+            }
+        }
+        */
     }
 }
