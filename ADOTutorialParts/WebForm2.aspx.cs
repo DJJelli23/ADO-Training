@@ -260,14 +260,22 @@ namespace ADOTutorialParts
         */
         /* SqlDataReader in ADO.NET Tutorial - Part 8
          * 
-         * 
+         * Read only and forward only. Most efficient choice to read data.
          * 
          * 
          */
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select Id, ProductName, QuantityAvailable from tblProductInventory", con);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridView1.DataSource = rdr;
+                GridView1.DataBind();
+            }
         }
     }
 }
