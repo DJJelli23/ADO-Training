@@ -203,7 +203,7 @@
             <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>
         --%>
-<%--DataSet in asp.net - Part 11--%>
+<%--DataSet in asp.net - Part 11--%
 
         <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal">
             <AlternatingRowStyle BackColor="#F7F7F7" />
@@ -231,6 +231,8 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
+        --%>
+<%--Caching DataSet in ASP.NET - Part 12--%>
 
     </div>
     </form>

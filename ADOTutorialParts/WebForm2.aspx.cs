@@ -396,7 +396,7 @@ namespace ADOTutorialParts
          * 
          * 
          * 
-         */
+         *
         protected void Page_Load(object sender, EventArgs e)
         {
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
@@ -417,6 +417,17 @@ namespace ADOTutorialParts
                 GridView2.DataSource = dt.Tables["Categories"];
                 GridView2.DataBind();
             }
-        }        
+        }  
+        */
+        /* Caching DataSet in ASP.NET - Part 12
+         * 
+         * 
+         * 
+         * 
+         */
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
