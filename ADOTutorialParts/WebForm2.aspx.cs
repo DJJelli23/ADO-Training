@@ -265,11 +265,11 @@ namespace ADOTutorialParts
          * Read only and forward only. Most efficient choice to read data.
          * 
          * 
-         */
+         *
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*/
+            /*
              * string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             //using (SqlConnection con = new SqlConnection(cs))
             //{
@@ -281,7 +281,7 @@ namespace ADOTutorialParts
             //        GridView1.DataBind();
             //    }
             //}
-            */
+            *
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
@@ -313,6 +313,21 @@ namespace ADOTutorialParts
                     GridView1.DataSource = tbl;
                     GridView1.DataBind();
                 }
+            }
+        }
+        */
+        /* SqlDataReader object's NextResult() method - Part 9
+         * 
+         * 
+         *     
+         */
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+
             }
         }
     }
