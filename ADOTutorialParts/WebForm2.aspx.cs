@@ -319,16 +319,43 @@ namespace ADOTutorialParts
         /* SqlDataReader object's NextResult() method - Part 9
          * 
          * 
+         * Multiple tables.
+         * 
+         * 
          *     
+         *
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString; 
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select * from tblProductCategories; select * from tblProductInventory", con);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    ProductGridView.DataSource = rdr;
+                    ProductGridView.DataBind();
+
+                    while (rdr.NextResult())
+                    {
+                        CategoryGridView.DataSource = rdr;
+                        CategoryGridView.DataBind();
+                    }
+                }
+            }
+        }
+        */
+
+        /* SqlDataAdapter in ADO.NET - Part 10
+         * 
+         * 
+         * 
          */
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(cs))
-            {
 
-            }
         }
     }
 }
