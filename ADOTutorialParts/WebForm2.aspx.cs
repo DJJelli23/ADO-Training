@@ -9,6 +9,8 @@ using System.Data.Odbc;
 using System.Data.OleDb;
 using System.Data.OracleClient;
 using System.Configuration;
+using System.Data;
+
 
 namespace ADOTutorialParts
 {
@@ -267,14 +269,50 @@ namespace ADOTutorialParts
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*/
+             * string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            //using (SqlConnection con = new SqlConnection(cs))
+            //{
+            //    con.Open();
+            //    SqlCommand cmd = new SqlCommand("Select Id, ProductName, QuantityAvailable from tblProductInventory", con);
+            //    using (SqlDataReader rdr = cmd.ExecuteReader())
+            //    {
+            //        GridView1.DataSource = rdr;
+            //        GridView1.DataBind();
+            //    }
+            //}
+            */
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select Id, ProductName, QuantityAvailable from tblProductInventory", con);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                GridView1.DataSource = rdr;
-                GridView1.DataBind();
+                // The below code can be done in the database and does not have to be in the code. Just change the query.
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    DataTable tbl = new DataTable();
+                    tbl.Columns.Add("ID");
+                    tbl.Columns.Add("Name");
+                    tbl.Columns.Add("Price");
+                    tbl.Columns.Add("DiscountedPrice");
+
+                    while (rdr.Read())
+                    {
+                        DataRow dataRow = tbl.NewRow();
+
+                        int orinPrice = Convert.ToInt32(rdr["QuantityAvailable"]);
+                        double discPrice = orinPrice * .9;
+
+                        dataRow["ID"] = rdr["Id"];
+                        dataRow["Name"] = rdr["ProductName"];
+                        dataRow["Price"] = orinPrice;
+                        dataRow["DiscountedPrice"] = discPrice;
+                        tbl.Rows.Add(dataRow);
+                    }
+
+                    GridView1.DataSource = tbl;
+                    GridView1.DataBind();
+                }
             }
         }
     }
