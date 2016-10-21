@@ -424,13 +424,50 @@ namespace ADOTutorialParts
          * 
          * 
          * 
-         */
+         *
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
         protected void btnLoadData_Click(object sender, EventArgs e)
+        {
+            if (Cache["Data"] == null)
+            {
+                string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("Select * from tblProductInventory", con);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    Cache["Data"] = ds;
+                    gvProducts.DataSource = ds;
+                    gvProducts.DataBind();
+                }
+                lblMessage.Text = "Data loaded from the Database.";
+            }
+            else
+            {
+                gvProducts.DataSource = (DataSet)Cache["Data"];// Have to cast it into a DataSet object
+                gvProducts.DataBind();
+                lblMessage.Text = "Data loaded from the Cache.";
+            }
+        }
+
+        protected void btnClearCache_Click(object sender, EventArgs e)
+        {
+            if (Cache["Data"] != null)
+            {
+                Cache.Remove("Data");
+                lblMessage.Text = "The DataSet is removed from the cache.";
+            }
+            else
+            {
+                lblMessage.Text = "There is nothing in the Cache to be removed.";
+            }
+        }
+        */// End of part 12
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }

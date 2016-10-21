@@ -235,7 +235,7 @@
 <%--Caching DataSet in ASP.NET - Part 12--%>
 
         <asp:Button ID="btnLoadData" runat="server" Text="Load Data" OnClick="btnLoadData_Click" />
-        <asp:Button ID="btnClearCache" runat="server" Text="Clear Cache" />
+        <asp:Button ID="btnClearCache" runat="server" Text="Clear Cache" OnClick="btnClearCache_Click" />
         <br />
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
