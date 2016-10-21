@@ -232,7 +232,7 @@
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
         --%>
-<%--Caching DataSet in ASP.NET - Part 12--%>
+<%--Caching DataSet in ASP.NET - Part 12--%
 
         <asp:Button ID="btnLoadData" runat="server" Text="Load Data" OnClick="btnLoadData_Click" />
         <asp:Button ID="btnClearCache" runat="server" Text="Clear Cache" OnClick="btnClearCache_Click" />
@@ -252,6 +252,8 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
+        --%>
+
 
     </div>
     </form>
