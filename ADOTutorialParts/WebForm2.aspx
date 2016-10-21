@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="font-family:Arial">
             <!--What is SqlCommandBuilder - Part 13 - <div style="font-family:Arial"> -->
             <%--        What is ADO.NET - Part 1
     
@@ -346,7 +346,39 @@
                 </tr>
             </table>
             --%>
-
+            <asp:Button ID="btnGetDataFromDB" runat="server" Text="Get Data from Database" />
+            <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                    <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                    <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
+                    <asp:BoundField DataField="TotalMarks" HeaderText="TotalMarks" SortExpression="TotalMarks" />
+                </Columns>
+            </asp:GridView>
+            <asp:Button ID="btnUpdateDB" runat="server" Text="Button" />
+            <asp:Label ID="lblMessage" runat="server"></asp:Label>
+<%--            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:DBCS %>" 
+                DeleteCommand="DELETE FROM [tblStudents] WHERE [ID] = @ID" 
+                InsertCommand="INSERT INTO [tblStudents] ([Name], [Gender], [TotalMarks]) VALUES (@Name, @Gender, @TotalMarks)" 
+                SelectCommand="SELECT * FROM [tblStudents]" 
+                UpdateCommand="UPDATE [tblStudents] SET [Name] = @Name, [Gender] = @Gender, [TotalMarks] = @TotalMarks WHERE [ID] = @ID">
+                <DeleteParameters>
+                    <asp:Parameter Name="ID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Name" Type="String" />
+                    <asp:Parameter Name="Gender" Type="String" />
+                    <asp:Parameter Name="TotalMarks" Type="Int32" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Name" Type="String" />
+                    <asp:Parameter Name="Gender" Type="String" />
+                    <asp:Parameter Name="TotalMarks" Type="Int32" />
+                    <asp:Parameter Name="ID" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>--%>
         </div>
     </form>
 </body>
