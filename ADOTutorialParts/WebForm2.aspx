@@ -8,8 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="font-family:Arial"> 
-<%--        What is ADO.NET - Part 1
+        <div>
+            <!--What is SqlCommandBuilder - Part 13 - <div style="font-family:Arial"> -->
+            <%--        What is ADO.NET - Part 1
     
             <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
@@ -22,7 +23,7 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>--%>
-<%--*************************************        SqlConnection in ASP.NET - Part 2              *************************************
+            <%--*************************************        SqlConnection in ASP.NET - Part 2              *************************************
     
             <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
@@ -35,7 +36,7 @@
             <SortedDescendingCellStyle BackColor="#D6DFDF" />
             <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>--%>
-<%-- ******************            ConnectionStrings in web.config configuration file - Part 3           *************        
+            <%-- ******************            ConnectionStrings in web.config configuration file - Part 3           *************        
     
     <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
@@ -49,7 +50,7 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>--%>
-<%--SqlCommand in ADO.NET Part 4
+            <%--SqlCommand in ADO.NET Part 4
 
 
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -65,8 +66,8 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        --%>
-<%--SQL Injection Attack Part 5
+            --%>
+            <%--SQL Injection Attack Part 5
 
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Get Products" />
@@ -83,7 +84,7 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>--%>
-<%--SQL Injection Prevention - Part 6
+            <%--SQL Injection Prevention - Part 6
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Get Products" />
         <br />
@@ -99,8 +100,8 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
-        --%>
-<%--Calling a Stored Procedure with Output Parameters Part 7--%
+            --%>
+            <%--Calling a Stored Procedure with Output Parameters Part 7--%
 
         <asp:Table ID="Table1" runat="server">
             <asp:TableRow runat="server">
@@ -141,8 +142,8 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        --%>
-<%--SqlDataReader in ADO.NET Tutorial - Part 8--%
+            --%>
+            <%--SqlDataReader in ADO.NET Tutorial - Part 8--%
         <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
             <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
@@ -154,8 +155,8 @@
             <SortedDescendingCellStyle BackColor="#F6F0C0" />
             <SortedDescendingHeaderStyle BackColor="#7E0000" />
         </asp:GridView>
-        --%>
-<%--SqlDataReader object's NextResult() method - Part 9--%
+            --%>
+            <%--SqlDataReader object's NextResult() method - Part 9--%
 
 
         <asp:GridView ID="ProductGridView" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
@@ -184,8 +185,8 @@
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
 
-        --%>
-<%--SqlDataAdapter in ADO.NET - Part 10--%
+            --%>
+            <%--SqlDataAdapter in ADO.NET - Part 10--%
 
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" Text="Get Product" OnClick="Button1_Click" />
@@ -202,8 +203,8 @@
             <SortedDescendingCellStyle BackColor="#D6DFDF" />
             <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>
-        --%>
-<%--DataSet in asp.net - Part 11--%
+            --%>
+            <%--DataSet in asp.net - Part 11--%
 
         <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal">
             <AlternatingRowStyle BackColor="#F7F7F7" />
@@ -231,8 +232,8 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        --%>
-<%--Caching DataSet in ASP.NET - Part 12--%
+            --%>
+            <%--Caching DataSet in ASP.NET - Part 12--%
 
         <asp:Button ID="btnLoadData" runat="server" Text="Load Data" OnClick="btnLoadData_Click" />
         <asp:Button ID="btnClearCache" runat="server" Text="Clear Cache" OnClick="btnClearCache_Click" />
@@ -252,9 +253,8 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-        --%>
-
-<%--What is SqlCommandBuilder - Part 13--%>
+            --%>
+            <%--What is SqlCommandBuilder - Part 13--%
         <table border="1">
             <tr>
                 <td>
@@ -301,7 +301,53 @@
                 </td>
             </tr>
         </table>
-    </div>
+            --%>
+            <%--SqlCommandBuilder Update Not Working - Part 14--%
+            <table border="1">
+                <tr>
+                    <td>Student ID
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtStudentId" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnGetStudent" runat="server" Text="Load" OnClick="btnGetStudent_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtStudentName" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlGender" runat="server">
+                            <asp:ListItem Text="Select Gender" Value="-1"></asp:ListItem>
+                            <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                            <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total Marks
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtTotalMarks" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                        <asp:Label ID="lblStatus" runat="server" Font-Bold="true">
+                        </asp:Label>
+                    </td>
+                </tr>
+            </table>
+            --%>
+
+        </div>
     </form>
 </body>
 </html>
