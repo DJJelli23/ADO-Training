@@ -10,6 +10,7 @@ using System.Data.OleDb;
 using System.Data.OracleClient;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
 
 
 namespace ADOTutorialParts
@@ -466,10 +467,75 @@ namespace ADOTutorialParts
                 lblMessage.Text = "There is nothing in the Cache to be removed.";
             }
         }
-        */// End of part 12
+        */
+        /* What is SqlCommandBuilder - Part 13
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnGetStudent_Click(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection con = new SqlConnection(cs);
+            string sqlQuery = "Select * from tblStudents where ID = " + txtStudentId.Text;
+            SqlDataAdapter sda = new SqlDataAdapter(sqlQuery, con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds, "Students");
+
+            ViewState["SQL_QUERY"] = sqlQuery;
+            ViewState["DATASET"] = ds;
+
+            if (ds.Tables["Students"].Rows.Count > 0)
+            {
+                DataRow dr = ds.Tables["Students"].Rows[0];
+                txtStudentName.Text = dr["Name"].ToString();
+                txtTotalMarks.Text = dr["TotalMarks"].ToString();
+                ddlGender.SelectedValue = dr["Gender"].ToString();
+                lblStatus.Text = "";
+            }
+            else
+            {
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = "No Student record with ID = " + txtStudentId.Text;
+            }
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection con = new SqlConnection(cs);
+
+            SqlDataAdapter sda = new SqlDataAdapter((string)ViewState["SQL_QUERY"], con);
+
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            DataSet ds = (DataSet)ViewState["DATASET"];
+
+            if (ds.Tables["Students"].Rows.Count > 0)
+            {
+                DataRow dr = ds.Tables["Students"].Rows[0];
+                dr["Name"] = txtStudentName.Text;
+                dr["Gender"] = ddlGender.SelectedValue;
+                dr["TotalMarks"] = txtTotalMarks.Text;
+            }
+            int rowsUpdated = sda.Update(ds, "Students");
+            if (rowsUpdated > 0)
+            {
+                lblStatus.ForeColor = Color.Green;
+                lblStatus.Text = rowsUpdated.ToString() + " row(s) updated";
+            }
+            else
+            {
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = "";
+            }
         }
     }
 }
