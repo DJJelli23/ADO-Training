@@ -346,6 +346,7 @@
                 </tr>
             </table>
             --%>
+            <%--Disconnected Data Access - ADO.NET Training - Part 15--%>
             <asp:Button ID="btnGetDataFromDB" runat="server" Text="Get Data from Database" />
             <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
