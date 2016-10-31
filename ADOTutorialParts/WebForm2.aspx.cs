@@ -611,7 +611,7 @@ namespace ADOTutorialParts
          * 
          * 
          * 
-         */
+         *
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -722,6 +722,18 @@ namespace ADOTutorialParts
                 sda.Update(ds, "Students");
                 lblMessage.Text = "Data changed in database.";
             }
+        }
+        */
+        /* AcceptChanges() and RejectChanges() Methods - ADO.NET Training - Part 16
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

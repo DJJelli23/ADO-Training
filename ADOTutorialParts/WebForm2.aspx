@@ -346,7 +346,7 @@
                 </tr>
             </table>
             --%>
-            <%--Disconnected Data Access - ADO.NET Training - Part 15--%>
+            <%--Disconnected Data Access - ADO.NET Training - Part 15--%
             <asp:Button ID="btnGetDataFromDB" runat="server" Text="Get Data from Database" OnClick="btnGetDataFromDB_Click" />
             <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowCancelingEdit="gvStudents_RowCancelingEdit" OnRowDeleting="gvStudents_RowDeleting" OnRowEditing="gvStudents_RowEditing" OnRowUpdating="gvStudents_RowUpdating">
                 <Columns>
@@ -380,6 +380,8 @@
                     <asp:Parameter Name="ID" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>--%>
+            <%--AcceptChanges() and RejectChanges() Methods - ADO.NET Training - Part 16--%>
+
         </div>
     </form>
 </body>
