@@ -346,9 +346,9 @@
                 </tr>
             </table>
             --%>
-            <%--Disconnected Data Access - ADO.NET Training - Part 15--%>
-            <asp:Button ID="btnGetDataFromDB" runat="server" Text="Get Data from Database" />
-            <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
+            <%--Disconnected Data Access - ADO.NET Training - Part 15--%
+            <asp:Button ID="btnGetDataFromDB" runat="server" Text="Get Data from Database" OnClick="btnGetDataFromDB_Click" />
+            <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowCancelingEdit="gvStudents_RowCancelingEdit" OnRowDeleting="gvStudents_RowDeleting" OnRowEditing="gvStudents_RowEditing" OnRowUpdating="gvStudents_RowUpdating">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
@@ -357,7 +357,7 @@
                     <asp:BoundField DataField="TotalMarks" HeaderText="TotalMarks" SortExpression="TotalMarks" />
                 </Columns>
             </asp:GridView>
-            <asp:Button ID="btnUpdateDB" runat="server" Text="Button" />
+            <asp:Button ID="btnUpdateDB" runat="server" Text="Update Database Table" OnClick="btnUpdateDB_Click" />
             <asp:Label ID="lblMessage" runat="server"></asp:Label>
 <%--            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:DBCS %>" 
@@ -380,6 +380,8 @@
                     <asp:Parameter Name="ID" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>--%>
+            <%--AcceptChanges() and RejectChanges() Methods - ADO.NET Training - Part 16--%>
+
         </div>
     </form>
 </body>
